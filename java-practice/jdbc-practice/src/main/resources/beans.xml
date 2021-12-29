@@ -1,0 +1,39 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
+
+    <!-- Initialization for data source -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@//localhost:1527/cortellis.stable"/>
+        <property name="username" value="LS_CHARTS_TEST"/>
+        <property name="password" value="ls_charts_Test_Stable"/>
+    </bean>
+
+    <!-- Definition for studentJDBCTemplate bean -->
+    <bean id="dbExecutor"
+          class="org.practice.DBExecutor">
+        <constructor-arg name="dataSource" ref="dataSource"/>
+        <constructor-arg name="sql" ref="sql"/>
+    </bean>
+
+
+    <bean id="sql" class="java.lang.String">
+        <constructor-arg>
+            <value>
+                <![CDATA[
+                    SELECT
+                        MAX(year) - 30 min_year
+                    FROM
+                        sales_dyc_ww_mean_top_10
+                    WHERE
+                        drug_id = 12135
+						]]>
+            </value>
+        </constructor-arg>
+    </bean>
+
+
+</beans>

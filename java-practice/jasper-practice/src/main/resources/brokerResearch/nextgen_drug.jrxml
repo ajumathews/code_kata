@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nextgen_report_drug" pageWidth="595" pageHeight="832" columnWidth="486" leftMargin="55" rightMargin="54" topMargin="22" bottomMargin="33" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" uuid="6667be51-4332-4ff9-9239-fd6b5ee7c2d8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.governor.max.pages.enabled" value="true"/>
+	<property name="net.sf.jasperreports.governor.max.pages" value="1500"/>
+	<parameter name="APP_PATH" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SECTIONS" class="java.util.List" isForPrompting="false"/>
+	<parameter name="SUBREPORTS" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LOGO_FOOTER" class="java.lang.String"/>
+	<parameter name="LABELS" class="java.util.List"/>
+	<parameter name="TPHARMA_HEADER" class="java.lang.String"/>
+	<parameter name="SNAPSHOT_FIELDS" class="java.util.List"/>
+	<parameter name="EXPORT_REPORT" class="com.thomson.brokerreseach.model.ReportDrugDocument"/>
+	<parameter name="IS_CONCATENATED" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="PAGE_OFFSET" class="java.lang.Integer"/>
+	<variable name="HeadingsCollection" class="java.util.List" calculation="System">
+		<initialValueExpression><![CDATA[new ArrayList()]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="50">
+			<printWhenExpression><![CDATA[$P{EXPORT_REPORT}.getDrugSalesAndForecasts() != null]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="11" width="486" height="39" isRemoveLineWhenBlank="true" uuid="9869d60f-f1d1-4545-b3dd-d0a9f3908436">
+				</reportElement>
+				<subreportParameter name="reportField">
+					<subreportParameterExpression><![CDATA[$P{EXPORT_REPORT}.getDrugSalesAndForecasts()]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA["nextgen_drug_section_drugSalesAndForecasts_all.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="51">
+			<subreport>
+				<reportElement x="1" y="0" width="486" height="51" isRemoveLineWhenBlank="true" uuid="7ba8b618-0b42-4244-977e-c0278b590ba8"/>
+				<subreportParameter name="PAGE_NUMBER">
+					<subreportParameterExpression><![CDATA[$V{PAGE_NUMBER}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PAGE_OFFSET">
+					<subreportParameterExpression><![CDATA[$P{PAGE_OFFSET}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA["report_footer.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

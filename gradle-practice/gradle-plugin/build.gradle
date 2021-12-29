@@ -1,0 +1,28 @@
+buildscript {
+    dependencies {
+        classpath files('show-date/build/libs/show-date-groovy-1.0-SNAPSHOT.jar')
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'org.practice.gradle'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile project(':gradle-json-library')
+}
+
+
+
+
+apply plugin: 'show-date-plugin'

@@ -1,0 +1,60 @@
+<h4>Add Payment</h4>
+<form name="payment" id="payment" method="POST" action="#">
+
+    <div class="form-group">
+        <input class="form-control" type="number" id="userId" placeholder="UserId">
+        <div id="errorMsgUserId"></div>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="number" id="paymentAmount" placeholder="Payment Amount">
+        <div id="errorMsgPaymentAmount"></div>
+    </div>
+
+    <div class="form-group">
+        <select id="paymentCategoryId" name="paymentCategoryId" class="form-control">
+            <option value="" selected disabled>Payment Category</option>
+            <option value="301">Grocery</option>
+            <option value="310">Vegetables</option>
+            <option value="302">Eating out</option>
+            <option value="303">Transport</option>
+            <option value="311">Non veg</option>
+            <option value="305">HouseHold</option>
+            <option value="312">Medical</option>
+            <option value="308">Savings</option>
+            <option value="309">Mutual Funds</option>
+            <option value="306">Car EMI</option>
+            <option value="304">Rent</option>
+            <option value="307">Others</option>
+        </select>
+        <div id="errorMsgPaymentCategoryId" class="text-center"></div>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="date" id="paymentDate" value="2014-12-29"
+               min="<%=LocalDate.now().minusMonths(6).toString()%>"
+               max="<%=LocalDate.now().toString()%>"
+               placeholder="Payment Date">
+        <div id="errorMsgPaymentDate"></div>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" id="paymentDescription"
+               placeholder="Payment Description">
+        <div id="errorMsgPaymentDescription"></div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <input class="form-control btn-primary text-center" type="submit" value="Add">
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+    <div id="status_message" class="alert alert-success text-center">Payment Added</div>
+
+</form>

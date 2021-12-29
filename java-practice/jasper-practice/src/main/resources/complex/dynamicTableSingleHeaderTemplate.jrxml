@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="horixontalTableTemplate" printOrder="Horizontal" pageWidth="480" pageHeight="802" columnWidth="480" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="386a1874-dd5c-4805-b23a-e43098a9445d">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <field name="headerName" class="java.lang.String"/>
+    <detail>
+        <band height="28">
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="0" width="480" height="28" backcolor="#d9ebeb" uuid="64ee73fe-9c3f-4db0-bf59-0b86e02a9059"/>
+                <box leftPadding="3">
+                    <pen lineWidth="0.25" lineColor="#CAC9C9"/>
+                    <topPen lineWidth="0.25" lineColor="#CAC9C9"/>
+                    <leftPen lineWidth="0.25" lineColor="#CAC9C9"/>
+                    <bottomPen lineWidth="0.25" lineColor="#CAC9C9"/>
+                    <rightPen lineWidth="0.25" lineColor="#CAC9C9"/>
+                </box>
+                <text><![CDATA[ ]]></text>
+            </staticText>
+            <textField isStretchWithOverflow="true">
+                <reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="480" height="28" uuid="6c6d8f3e-530d-4db5-b767-392104e6bdf6">
+                    <property name="net.sf.jasperreports.export.pdf.tag.tr" value="full"/>
+                    <printWhenExpression><![CDATA[$F{headerName} != null]]></printWhenExpression>
+                </reportElement>
+                <box leftPadding="3">
+                    <pen lineWidth="0.25" lineColor="#CAC9C9"/>
+                    <topPen lineWidth="0.25" lineColor="#CAC9C9"/>
+                    <leftPen lineWidth="0.25" lineColor="#CAC9C9"/>
+                    <bottomPen lineWidth="0.25" lineColor="#CAC9C9"/>
+                    <rightPen lineWidth="0.25" lineColor="#CAC9C9"/>
+                </box>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font fontName="Arial" size="8" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{headerName}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>

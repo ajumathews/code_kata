@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="simpleTemplate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="386a1874-dd5c-4805-b23a-e43098a9445d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+
+	<parameter name="EMPLOYEE_SECTION" class="org.grace.jasper.model.EmployeeSection"/>
+	<parameter name="SUB_REPORT_PARAMETER" class="net.sf.jasperreports.engine.JasperReport"/>
+	<detail>
+		<band height="64" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="9fe0b1bd-e7da-4a54-940d-74c97225bd76" x="0" y="19" width="480" height="39" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{EMPLOYEE_SECTION}.getEmployeeList())]]></dataSourceExpression>
+				<subreportExpression class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{SUB_REPORT_PARAMETER}]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement uuid="a3fc710f-a1a8-4dab-be17-37f1d0685fcf" x="0" y="0" width="175" height="14" forecolor="#999999">
+					<printWhenExpression><![CDATA[$P{EMPLOYEE_SECTION} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="none">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Employees"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["Employees"]]></anchorNameExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

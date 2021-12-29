@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_footer" pageWidth="453" pageHeight="842" columnWidth="453" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="93cc8dc2-ba80-44fb-a869-25d651de5ab9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="PAGE_NUMBER" class="java.lang.Integer"/>
+	<parameter name="PAGE_OFFSET" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="51" splitType="Stretch">
+			<image scaleImage="RealSize">
+				<reportElement uuid="ed917354-e457-4699-8a00-dfaa423667a9" x="316" y="20" width="137" height="31"/>
+				<imageExpression><![CDATA["images/logo_footer.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="1225e10e-8d4f-4df8-b2f3-889fac9cb50b" x="1" y="31" width="11" height="20" forecolor="#505050"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[©]]></text>
+			</staticText>
+			<textField hyperlinkType="LocalAnchor">
+				<reportElement uuid="41ebc5c1-6e41-4251-bfcb-d0ef1375a74d" x="330" y="0" width="122" height="20" forecolor="#0078AE"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Return to Table of Contents"]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA["TABLEOFCONTENTS"]]></hyperlinkAnchorExpression>
+			</textField>
+			<textField pattern="yyyy">
+				<reportElement uuid="58b2843b-a6a3-4c7b-a674-85498c257115" x="12" y="31" width="21" height="20" forecolor="#505050"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="eb4d48b3-878a-4172-859d-83a3338f87e4" x="33" y="31" width="171" height="20" forecolor="#505050"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[ Clarivate Analytics]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="f4f860e5-221a-48b9-9c29-d5b4754c824b" x="240" y="31" width="50" height="20" forecolor="#505050"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PAGE_NUMBER} + $P{PAGE_OFFSET}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

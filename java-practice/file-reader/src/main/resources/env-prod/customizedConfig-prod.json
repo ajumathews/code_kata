@@ -1,0 +1,28 @@
+{
+  "dealsResultConfig": {
+    "configurations": [
+      {
+        "resultFieldKey": "principalCompany",
+        "downloadFieldKeys": [
+          "dealCompanyPrincipal",
+          "dealPrincipalCompanyNamesAll",
+          "dealCompanyPrincipalOrgType",
+          "dealCompanyPrincipalFieldOfActivity",
+          "dealCompanyPrincipalHq"
+        ],
+        "exportToggle": "on"
+      },
+      {
+        "resultFieldKey": "partnerCompany",
+        "downloadFieldKeys": [
+          "dealCompanyPartner",
+          "dealCompanyPartner",
+          "dealCompanyPartnerOrgType",
+          "dealCompanyPartnerFieldOfActivity",
+          "dealCompanyPartnerHq"
+        ],
+        "exportToggle": "on"
+      }
+    ]
+  }
+}

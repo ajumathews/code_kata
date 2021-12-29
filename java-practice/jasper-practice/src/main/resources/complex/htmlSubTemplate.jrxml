@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="simpleTemplate" pageWidth="595" pageHeight="802" columnWidth="480" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="386a1874-dd5c-4805-b23a-e43098a9445d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="contentType" class="java.lang.String"/>
+	<field name="htmlContent" class="java.lang.Object"/>
+	<field name="title" class="java.lang.String"/>
+	<detail>
+		<band height="30">
+			<printWhenExpression><![CDATA[$F{contentType} == "TEXT"]]></printWhenExpression>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="5" width="480" height="24" uuid="a3fc710f-a1a8-4dab-be17-37f1d0685fcf" forecolor="#505050">
+					<printWhenExpression><![CDATA[$F{htmlContent} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="html">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{htmlContent}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30" >
+			<printWhenExpression><![CDATA[$F{contentType} == "TABLE"]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="5" width="480" height="25" isRemoveLineWhenBlank="true" uuid="9fe0b1bd-e7da-4a54-940d-74c97225bd76"/>
+					<subreportParameter name="htmlTableContent">
+						<subreportParameterExpression><![CDATA[((org.grace.jasper.model.complex.HtmlTable)$F{htmlContent})]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA["dynamicTableMasterTemplate.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30">
+			<printWhenExpression><![CDATA[$F{contentType} == "TABLE_IMAGE"]]></printWhenExpression>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="5" width="480" height="24" uuid="a3fc710f-a1a8-4dab-be17-37f1d0685fcf" forecolor="#505050"/>
+				<textElement markup="html" textAlignment="Center">
+					<font fontName="Arial" size="8" isItalic="true" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{htmlContent}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<printWhenExpression><![CDATA[$F{contentType} == "IMAGE"]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="5" width="480" height="25" isRemoveLineWhenBlank="true" uuid="9fe0b1bd-e7da-4a54-940d-74c97225bd76"/>
+				<subreportParameter name="imageContent">
+					<subreportParameterExpression><![CDATA[((java.io.InputStream)$F{htmlContent})]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="imageTitle">
+					<subreportParameterExpression><![CDATA[((java.lang.String)$F{title})]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA["imageTemplate.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+
+	</detail>
+</jasperReport>

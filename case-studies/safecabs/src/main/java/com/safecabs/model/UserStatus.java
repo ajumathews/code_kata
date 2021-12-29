@@ -1,0 +1,14 @@
+package com.safecabs.model;
+
+public enum UserStatus {
+    IDLE,
+    REQUEST_IN_QUEUE,
+    SUBMITTING_REQUEST_TO_PROCESS,
+    PROCESSING_REQUEST,
+    BOOKED_CAB,
+    AWAITING_CAB,
+    BOARDED_CAB,
+    RIDE_STARTED,
+    RIDE_IN_PROGRESS,
+    RIDE_ENDED
+}

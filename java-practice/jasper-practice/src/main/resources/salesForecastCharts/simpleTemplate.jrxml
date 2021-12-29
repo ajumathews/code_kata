@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="simpleTemplate" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0"
+              topMargin="0" bottomMargin="0" uuid="386a1874-dd5c-4805-b23a-e43098a9445d">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <parameter name="content" class="java.lang.String"/>
+    <parameter name="currentSvg" class="java.io.InputStream"/>
+    <parameter name="companySvg" class="java.io.InputStream"/>
+    <parameter name="regionSvg" class="java.io.InputStream"/>
+
+    <detail>
+        <!--<band height="64">
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="a3fc710f-a1a8-4dab-be17-37f1d0685fcf" x="0" y="20" width="480" height="39"
+                               forecolor="#999999"/>
+                <box leftPadding="5">
+                    <topPen lineWidth="0.0"/>
+                    <leftPen lineWidth="0.0"/>
+                </box>
+                <textElement markup="html">
+                    <font fontName="Arial" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{content}]]></textFieldExpression>
+            </textField>
+        </band>-->
+        <!--        <band height="64">
+                    <image scaleImage="RealSize" hAlign="Left" vAlign="Top">
+                        <reportElement uuid="a3fc710f-a1a8-4dab-be17-37f1d0685fcf" x="0" y="20" width="480" height="39"
+                                       forecolor="#999999"/>
+                        <imageExpression>
+                            <![CDATA[net.sf.jasperreports.renderers.BatikRenderer.getInstance((java.io.InputStream)$P{currentSvg})]]></imageExpression>
+                    </image>
+                </band>-->
+        <!--
+                <band height="64">
+                    <image scaleImage="RealSize" hAlign="Left" vAlign="Top">
+                        <reportElement uuid="a3fc710f-a1a8-4dab-be17-37f1d0685fcf" x="0" y="20" width="480" height="39"
+                                       forecolor="#999999"/>
+                        <imageExpression>
+                            <![CDATA[net.sf.jasperreports.renderers.BatikRenderer.getInstance((java.io.InputStream)$P{companySvg})]]></imageExpression>
+                    </image>
+                </band>
+                <band height="64">
+                    <image scaleImage="RealSize" hAlign="Left" vAlign="Top">
+                        <reportElement uuid="a3fc710f-a1a8-4dab-be17-37f1d0685fcf" x="0" y="20" width="480" height="39"
+                                       forecolor="#999999"/>
+                        <imageExpression>
+                            <![CDATA[net.sf.jasperreports.renderers.BatikRenderer.getInstance((java.io.InputStream)$P{regionSvg})]]></imageExpression>
+                    </image>
+                </band>
+        -->
+
+
+        <band height="500">
+            <textField>
+                <reportElement x="0" y="0" width="149" height="20" forecolor="#999999"
+                               uuid="fe084dda-e871-4adc-b588-8d68b410cbad"/>
+                <textElement markup="styled">
+                    <font fontName="Arial" isBold="true" isPdfEmbedded="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["SALES AND FORECASTS"]]></textFieldExpression>
+                <anchorNameExpression><![CDATA["SALESANDFORECASTS"]]></anchorNameExpression>
+            </textField>
+            <textField>
+                <reportElement x="0" y="20" width="520" height="20" isRemoveLineWhenBlank="true" forecolor="#999999"
+                               uuid="a8198062-b3f3-4363-9558-18bee49c6f57">
+                    <printWhenExpression>
+                        <![CDATA[$P{companySvg} != null]]></printWhenExpression>
+                </reportElement>
+                <textElement markup="styled">
+                    <font fontName="Arial" isBold="true" isPdfEmbedded="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Total Sales By Company"]]></textFieldExpression>
+            </textField>
+            <image scaleImage="RealSize" hAlign="Left" vAlign="Top">
+                <reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="40" width="520"
+                               height="270" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true"
+                               uuid="8631f291-a8c5-4f67-adef-f6bdfa3d55bc">
+                    <printWhenExpression>
+                        <![CDATA[$P{companySvg} != null]]></printWhenExpression>
+                </reportElement>
+                <imageExpression>
+                    <![CDATA[net.sf.jasperreports.renderers.BatikRenderer.getInstance((java.io.InputStream)$P{companySvg})]]></imageExpression>
+            </image>
+        </band>
+        <band height="310" splitType="Prevent">
+            <textField>
+                <reportElement x="0" y="0" width="149" height="20" isRemoveLineWhenBlank="true" forecolor="#999999"
+                               uuid="a8198062-b3f3-4363-9558-18bee49c6f57">
+                    <printWhenExpression><![CDATA[$P{regionSvg} != null]]></printWhenExpression>
+                </reportElement>
+                <textElement markup="styled">
+                    <font fontName="Arial" isBold="true" isPdfEmbedded="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Total Sales By Region"]]></textFieldExpression>
+            </textField>
+                <image scaleImage="RealSize" hAlign="Left" vAlign="Top">
+                    <reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="40" width="520"
+                                   height="270" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true"
+                                   uuid="8631f291-a8c5-4f67-adef-f6bdfa3d55bc">
+                        <printWhenExpression>
+                            <![CDATA[$P{regionSvg} != null]]></printWhenExpression>
+                    </reportElement>
+                <imageExpression>
+                    <![CDATA[net.sf.jasperreports.renderers.BatikRenderer.getInstance((java.io.InputStream)$P{regionSvg})]]></imageExpression>
+            </image>
+        </band>
+    </detail>
+</jasperReport>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="click.js"></script>
+    </head>
+    <body>
+        <div id="clicker" ng-app='clickApp' ng-controller="clickController">
+           <p>The food is {{message1}} spicy</p>
+        </div>
+    </body>
+	
+<script>
+	setTimeout(function(){	
+	debugger;
+		angular.element(document.getElementById('clicker')).scope().indian();
+	},200);
+</script>
+
+</html>

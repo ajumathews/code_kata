@@ -1,0 +1,17 @@
+html {
+       overflow: hidden;
+     }
+
+.customfont {
+      font-family: 'Pattaya';font-size:25px;
+      }
+
+#login-container{
+    padding-top:20%;
+}
+
+
+#login{
+
+ padding-top:10%;
+}

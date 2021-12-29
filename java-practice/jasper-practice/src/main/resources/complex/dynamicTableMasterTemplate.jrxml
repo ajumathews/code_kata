@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dynamicTemplate" pageWidth="480" pageHeight="802" columnWidth="480" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="386a1874-dd5c-4805-b23a-e43098a9445d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="htmlTableContent" class="org.grace.jasper.model.complex.HtmlTable"/>
+
+	<detail>
+		<!--Title-->
+		<band height="26" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{htmlTableContent}.getTableTitle()!=null]]></printWhenExpression>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="6c6d8f3e-530d-4db5-b767-392104e6bdf6" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="480" height="26"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{htmlTableContent}.getTableTitle()]]></textFieldExpression>
+			</textField>
+		</band>
+
+		<!--Headers-->
+		<band height="26" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{htmlTableContent}.getTableHeaders().size()==1]]></printWhenExpression>
+			<subreport>
+				<reportElement uuid="9fe0b1bd-e7da-4a54-940d-74c97225bd76" x="0" y="0" width="480" height="26" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{htmlTableContent}.getTableHeaders())]]></dataSourceExpression>
+				<subreportExpression><![CDATA["dynamicTableSingleHeaderTemplate.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="26" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{htmlTableContent}.getTableHeaders().size()==2]]></printWhenExpression>
+			<subreport>
+				<reportElement uuid="9fe0b1bd-e7da-4a54-940d-74c97225bd76" x="0" y="0" width="480" height="26" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{htmlTableContent}.getTableHeaders())]]></dataSourceExpression>
+				<subreportExpression><![CDATA["dynamicTableTwoHeaderTemplate.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="26" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{htmlTableContent}.getTableHeaders().size()==3]]></printWhenExpression>
+			<subreport>
+				<reportElement uuid="9fe0b1bd-e7da-4a54-940d-74c97225bd76" x="0" y="0" width="480" height="26" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{htmlTableContent}.getTableHeaders())]]></dataSourceExpression>
+				<subreportExpression><![CDATA["dynamicTableThreeHeaderTemplate.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="26" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{htmlTableContent}.getTableHeaders().size()==4]]></printWhenExpression>
+			<subreport>
+				<reportElement uuid="9fe0b1bd-e7da-4a54-940d-74c97225bd76"  x="0" y="0" width="480" height="26" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{htmlTableContent}.getTableHeaders())]]></dataSourceExpression>
+				<subreportExpression><![CDATA["dynamicTableFourHeaderTemplate.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="26" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{htmlTableContent}.getTableHeaders().size()==5]]></printWhenExpression>
+			<subreport>
+				<reportElement uuid="9fe0b1bd-e7da-4a54-940d-74c97225bd76"  x="0" y="0" width="480" height="26" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{htmlTableContent}.getTableHeaders())]]></dataSourceExpression>
+				<subreportExpression><![CDATA["dynamicTableFiveHeaderTemplate.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+
+		<!--Rows-->
+		<band height="26">
+			<subreport>
+				<reportElement uuid="9fe0b1bd-e7da-4a54-940d-74c97225bd76" x="0" y="0" width="480" height="26" isRemoveLineWhenBlank="true" />
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{htmlTableContent}.getTableRows())]]></dataSourceExpression>
+				<subreportExpression><![CDATA["dynamicTableBodyTemplate.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+
+		<!--Footer-->
+		<band height="26" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{htmlTableContent}.getTableFooter()!=null]]></printWhenExpression>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="6c6d8f3e-530d-4db5-b767-392104e6bdf6" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="480" height="26"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{htmlTableContent}.getTableFooter()]]></textFieldExpression>
+			</textField>
+		</band>
+
+
+	</detail>
+</jasperReport>

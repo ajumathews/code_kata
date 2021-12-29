@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="logback-include.xml"/>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="com.clarivate" level="INFO" />
+
+    <!-- Eureka logs -->
+    <logger name="com.netflix.loadbalancer" level="INFO"/>
+    <logger name="com.netflix.discovery" level="INFO" />
+    <logger name="com.netflix.config" level="INFO" />
+
+    <!-- Eiddo logs -->
+    <logger name="com.clarivate.eiddo" level="WARN" />
+
+    <!-- Spring logs -->
+    <logger name="org.springframework." level="INFO" />
+
+
+</configuration>

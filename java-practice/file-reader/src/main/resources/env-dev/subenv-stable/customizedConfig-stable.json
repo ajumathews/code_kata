@@ -1,0 +1,22 @@
+{
+  "customizedColumnConfig": [
+    {
+      "resultfieldKey": "princleCompanysss",
+      "downloadFieldKeys": [
+        "princleCompany",
+        "princleCompanyOrg",
+        "princleCompanyName"
+      ],
+      "exportToggle": "on"
+    },
+    {
+      "resultfieldKey": "partnerCompany",
+      "downloadFieldKeys": [
+        "partnerCompany",
+        "partnerCompanyX",
+        "partnerCompanyY"
+      ],
+      "exportToggle": "off"
+    }
+  ]
+}

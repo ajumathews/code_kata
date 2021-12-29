@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="tableController.js"></script>
+    <body>
+        <div ng-app='myTable' ng-controller='myTableController'>
+            <table>
+                <tr ng-repeat="x in persons">
+                 <td>{{x.name}}</td>
+                 <td>{{x.age}}</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>    

@@ -1,0 +1,12 @@
+package com.safecabs.model;
+
+public enum CabStatus {
+    AVAILABLE,
+    BOOKED,
+    AWAITING_RIDERS,
+    MOVING_TO_PICKUP_LOCATION,
+    REACHED_PICKUP_LOCATION,
+    RIDE_STARTED,
+    RIDE_IN_PROGRESS,
+    REACHED_DROP_LOCATION
+}

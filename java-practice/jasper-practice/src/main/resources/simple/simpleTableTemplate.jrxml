@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="simpleTemplate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="386a1874-dd5c-4805-b23a-e43098a9445d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+
+
+	<field name="country" class="java.lang.String">
+		<fieldDescription><![CDATA[country]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="23">
+			<staticText>
+				<reportElement uuid="d9750825-80be-4b98-92c2-b5865caa734b" mode="Opaque" x="0" y="3" width="535" height="15" backcolor="#70A9A9"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f9c14ea7-d941-4a9c-b17f-6f624eab0a61" x="414" y="3" width="121" height="15"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Country]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="69a2c0c5-09ac-4c8e-9a50-3a1c54581fcf" x="0" y="3" width="136" height="15"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="477">
+			<staticText>
+				<reportElement uuid="64ee73fe-9c3f-4db0-bf59-0b86e02a9059" mode="Opaque" x="0" y="0" width="535" height="45" backcolor="#E5ECF9"/>
+				<box>
+					<bottomPen lineWidth="0.25" lineColor="#CCCCCC"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="cd96c56d-320d-4aa4-afde-8c5977979ac4" x="414" y="0" width="121" height="45"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{country}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6c6d8f3e-530d-4db5-b767-392104e6bdf6" x="0" y="0" width="136" height="45"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

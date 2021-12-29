@@ -1,0 +1,36 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bower-angular-translate/2.7.1/angular-translate.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="fromPropertyController.js"></script>
+
+
+<div ng-app="propertyControllerApp" ng-controller="propertyController">
+
+    <a ng-click="indian()">Indian</a>
+    <a ng-click="chineese()">Chineese</a>
+    <a ng-click="showHelp($event,'filterCompanyPrincipalHelp')" id="filterCompanyPrincipalHelp" class="help-info"
+        title="Help"></a>
+
+    <div test>
+        <p>The food is {{message}} spicy</p>
+    </div>
+
+
+    <table class="drugBrokerTable">
+        <tr>
+            <th>
+                <span class="multiValueheader" translate="name.label"></span>
+                <span class="multiValueheader">
+                    <a ng-click="showHelp($event,'filterCompanyPrincipalHelp')"
+                        id="filterCompanyPrincipalHelp" class="help-info" title="Help"></a>
+                </span>
+            </th>
+            <th translate="age.label"></th>
+        </tr>
+        <tr>
+            <td>Aju</td>
+            <td>1235</td>
+        </tr>
+    </table>
+
+</div>

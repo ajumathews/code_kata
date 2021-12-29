@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dynamicTemplate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="386a1874-dd5c-4805-b23a-e43098a9445d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="TABLE_HEADERS" class="org.grace.jasper.model.TableHeaderSection"/>
+	<parameter name="EMPLOYEE_SECTION" class="org.grace.jasper.model.EmployeeSection"/>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="9fe0b1bd-e7da-4a54-940d-74c97225bd76" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="480" height="26" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{TABLE_HEADERS}.getTableHeaders())]]></dataSourceExpression>
+				<subreportExpression><![CDATA["horizontalTableTemplate.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="26" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="9fe0b1bd-e7da-4a54-940d-74c97225bd76" x="0" y="0" width="480" height="26" isRemoveLineWhenBlank="true"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{EMPLOYEE_SECTION}.getEmployeeList())]]></dataSourceExpression>
+				<subreportExpression><![CDATA["tableTemplate.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

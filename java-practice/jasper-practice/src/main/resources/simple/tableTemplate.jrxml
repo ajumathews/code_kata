@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tableTemplate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="20" uuid="386a1874-dd5c-4805-b23a-e43098a9445d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="country" class="java.lang.String">
+		<fieldDescription><![CDATA[country]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="26">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="6c6d8f3e-530d-4db5-b767-392104e6bdf6" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="111" height="26"/>
+				<box leftPadding="3">
+					<pen lineWidth="0.25" lineColor="#EAEAEA"/>
+					<topPen lineWidth="0.25" lineColor="#EAEAEA"/>
+					<leftPen lineWidth="0.25" lineColor="#EAEAEA"/>
+					<bottomPen lineWidth="0.25" lineColor="#EAEAEA"/>
+					<rightPen lineWidth="0.25" lineColor="#EAEAEA"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="cd96c56d-320d-4aa4-afde-8c5977979ac4" positionType="Float" stretchType="RelativeToBandHeight" x="111" y="0" width="111" height="26"/>
+				<box leftPadding="3">
+					<pen lineWidth="0.25" lineColor="#EAEAEA"/>
+					<topPen lineWidth="0.25" lineColor="#EAEAEA"/>
+					<leftPen lineWidth="0.25" lineColor="#EAEAEA"/>
+					<bottomPen lineWidth="0.25" lineColor="#EAEAEA"/>
+					<rightPen lineWidth="0.25" lineColor="#EAEAEA"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{country}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

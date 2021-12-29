@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+group 'com.practice.gradle'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile project(':gradle-json-library')
+}
+
+task showDate{
+    dependsOn(build)
+    group = 'my tasks'
+    description ="Show current date"
+    doLast {
+        println "Current Date:"+ new Date()
+    }
+}
+
+class DisplayDate extends  DefaultTask{
+
+    String dateMessage ="Date is "
+
+    @TaskAction
+    void displayDate(){
+        println dateMessage + new Date()
+    }
+}
+
+task displayDate(type: DisplayDate)
+
+task customDisplayDate(type: DisplayDate){
+    dateMessage ="Custom date is "
+}

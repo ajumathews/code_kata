@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="simpleTemplate" pageWidth="486" pageHeight="777" columnWidth="486" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="386a1874-dd5c-4805-b23a-e43098a9445d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imageContent" class="java.io.InputStream"/>
+	<parameter name="imageTitle" class="java.lang.String"/>
+	<detail>
+		<band height="80">
+			<!--When its an image-->
+			<image scaleImage="RetainShape" hAlign="Left" isUsingCache="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="101" y="9" width="115" height="64" isPrintWhenDetailOverflows="true" uuid="2fabe235-a83c-41c5-b7b7-ffe35f0254bb">
+					<printWhenExpression><![CDATA[$P{imageContent} != null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineColor="#FFFFFF"/>
+				</box>
+				<imageExpression><![CDATA[((java.io.InputStream)$P{imageContent})]]></imageExpression>
+			</image>
+
+			<!--When its a video-->
+<!--			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject"  x="101" y="9" width="115" height="64" uuid="a3fc710f-a1a8-4dab-be17-37f1d0685fcf">
+					<printWhenExpression><![CDATA[$P{imageContent} == null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineColor="#FFFFFF"/>
+					<leftPen lineColor="#FFFFFF"/>
+					<bottomPen lineColor="#FFFFFF"/>
+					<rightPen lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="7" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Animation available online"]]></textFieldExpression>
+			</textField>-->
+
+			<image scaleImage="RetainShape" hAlign="Left" isUsingCache="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="110" y="9" width="115" height="60" isPrintWhenDetailOverflows="true" uuid="2fabe235-a83c-41c5-b7b7-ffe35f0254bb">
+					<printWhenExpression><![CDATA[$P{imageContent} == null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineColor="#FFFFFF"/>
+				</box>
+				<imageExpression><![CDATA["templates/swf_thumbnail-3.gif"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject"  x="106" y="70" width="115" height="5" uuid="a3fc710f-a1a8-4dab-be17-37f1d0685fcf">
+					<printWhenExpression><![CDATA[$P{imageContent} == null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineColor="#FFFFFF"/>
+					<leftPen lineColor="#FFFFFF"/>
+					<bottomPen lineColor="#FFFFFF"/>
+					<rightPen lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="6" />
+				</textElement>
+				<textFieldExpression><![CDATA["Animation available online"]]></textFieldExpression>
+			</textField>
+
+
+			<!--Image Title-->
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="216" y="9" width="148" height="64" uuid="a3fc710f-a1a8-4dab-be17-37f1d0685fcf">
+					<printWhenExpression><![CDATA[$P{imageTitle} != null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineColor="#FFFFFF"/>
+					<leftPen lineColor="#FFFFFF"/>
+					<bottomPen lineColor="#FFFFFF"/>
+					<rightPen lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{imageTitle}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="91" y="0" width="283" height="80" uuid="bde30196-0416-41c9-afd1-45163187c910"/>
+				<box>
+					<pen lineWidth="0.25" lineColor="#999999"/>
+					<topPen lineWidth="0.25" lineColor="#999999"/>
+					<leftPen lineWidth="0.25" lineColor="#999999"/>
+					<bottomPen lineWidth="0.25" lineColor="#999999"/>
+					<rightPen lineWidth="0.25" lineColor="#999999"/>
+				</box>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

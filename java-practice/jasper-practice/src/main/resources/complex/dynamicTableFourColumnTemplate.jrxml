@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tableTemplate" pageWidth="480" pageHeight="842" columnWidth="480" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="386a1874-dd5c-4805-b23a-e43098a9445d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table_TD" mode="Opaque" forecolor="#000000" backcolor="FFFFFF">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{isInternalHeader}]]></conditionExpression>
+			<style backcolor="#d9ebeb"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{backColor}]]></conditionExpression>
+			<style backcolor="#EAEAEA"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="column1" class="java.lang.Object"/>
+	<parameter name="column2" class="java.lang.Object"/>
+	<parameter name="column3" class="java.lang.Object"/>
+	<parameter name="column4" class="java.lang.Object"/>
+	<parameter name="backColor" class="java.lang.Boolean"/>
+	<parameter name="isInternalHeader" class="java.lang.Boolean"/>
+
+
+	<detail>
+		<band height="28" >
+			<textField isStretchWithOverflow="true">
+				<reportElement style="table_TD" uuid="6c6d8f3e-530d-4db5-b767-392104e6bdf6" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="120" height="28" >
+					<printWhenExpression><![CDATA[$P{column1} != null]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<topPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<leftPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<bottomPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<rightPen lineWidth="0.25" lineColor="#CAC9C9"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{column1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="table_TD" uuid="cd96c56d-320d-4aa4-afde-8c5977979ac4" positionType="Float" stretchType="RelativeToBandHeight" x="120" y="0" width="120" height="28" >
+					<printWhenExpression><![CDATA[$P{column2} != null]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<topPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<leftPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<bottomPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<rightPen lineWidth="0.25" lineColor="#CAC9C9"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{column2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="table_TD" uuid="69e8b484-a299-4d6b-82b2-04102fd12137" positionType="Float" stretchType="RelativeToBandHeight" x="240" y="0" width="120" height="28">
+					<printWhenExpression><![CDATA[$P{column3} != null]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<topPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<leftPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<bottomPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<rightPen lineWidth="0.25" lineColor="#CAC9C9"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{column3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="table_TD" uuid="b5ae4b26-7686-4851-a6cd-ee0150b83031" positionType="Float" stretchType="RelativeToBandHeight" x="360" y="0" width="120" height="28">
+					<printWhenExpression><![CDATA[$P{column4} != null && $P{column4} instanceof java.lang.String ]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<topPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<leftPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<bottomPen lineWidth="0.25" lineColor="#CAC9C9"/>
+					<rightPen lineWidth="0.25" lineColor="#CAC9C9"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{column4}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

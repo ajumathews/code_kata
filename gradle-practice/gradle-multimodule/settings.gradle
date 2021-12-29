@@ -1,0 +1,5 @@
+rootProject.name = 'gradle-multimodule'
+include 'gradle-si'
+include 'gradle-ct'
+include 'gradle-war'
+
