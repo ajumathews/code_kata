@@ -7,6 +7,8 @@ import java.util.*;
 
 public class MapTest {
 
+    Employee e4 = new Employee("aju", "123");
+
     Employee e1 = new Employee("aju", "123");
     Employee e2 = new Employee("kaveri", "123");
     Employee e3 = new Employee("akshatha", "123");
