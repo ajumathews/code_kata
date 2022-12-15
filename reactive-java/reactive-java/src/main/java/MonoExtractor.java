@@ -85,10 +85,11 @@ public class MonoExtractor {
 
     public static void main(String[] args) {
 //        blockingCall();
-//        nonBlockingCall();
+        nonBlockingCall();
+        System.out.println("java");
 
         //nonblockingCallReturn();
-        FlatMapReturn().subscribe(System.out::println);
+       // FlatMapReturn().subscribe(System.out::println);
     }
 
 

@@ -14,13 +14,12 @@ public class Main {
 
     private static void simple() {
 
-        Flux<Integer> just = Flux.just(1, 2, 3, 4);
-        Mono<Integer> mono = Mono.just(1);
+        Mono<Integer> resourSDKResponse = Mono.just(1);
 
-        List<Integer> elements = new ArrayList<>();
-        just.log()
-                .subscribe(integer -> elements.add(integer));
-        System.out.println(elements.size());
+
+       int responsse =   resourSDKResponse.block();
+        System.out.println(responsse);
+
     }
 
 
@@ -153,7 +152,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //simple();
+        simple();
         //mapData();
         //infiniteHotStream();
         //infiniteHotStreamWithThrottling();

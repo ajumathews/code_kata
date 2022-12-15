@@ -1,4 +1,3 @@
-import java.text.CollationKey;
 import java.util.*;
 
 public class CollectionsPractice {

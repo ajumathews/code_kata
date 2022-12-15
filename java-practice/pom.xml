@@ -38,6 +38,8 @@
         <module>json-parser</module>
         <module>file-reader</module>
         <module>Test</module>
+      <module>date</module>
+      <module>webflux</module>
     </modules>
 
     <build>

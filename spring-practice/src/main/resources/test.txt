@@ -1,0 +1,8 @@
+new product="ij" category="105"newtitle=Multiline search and replace in the current file
+new product="ij" category="105" newtitle=Improved search and replace in the current file
+new product="ij" category="105" newtitle=Regexp shows replacement preview
+
+
+\stitle="(.*)?"
+
+ newtitle=$1

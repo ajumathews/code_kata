@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+					http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:component-scan base-package="org.grace.tutorial">
+    <context:exclude-filter expression=".*Test.*" type="regex"/>
+    <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+  </context:component-scan>
+
+  <context:spring-configured/>
+
+  <import resource="spring-integration-context.xml"/>
+
+
+  <bean id="rabbitMQService" class="org.grace.tutorial.ods.service.RabbitMQService"/>
+
+  <bean id="transformService" class="org.grace.tutorial.ods.service.TransformService">
+    <property name="rabbitMQService" ref="rabbitMQService"/>
+  </bean>
+
+  <bean id="rejectErrorFilterService" class="org.grace.tutorial.ods.service.RejectErrorFilterService"/>
+
+
+  <bean id="consumeResourceService" class="org.grace.tutorial.ods.service.ConsumeResourceService"/>
+  <bean id="productMapper" class="org.grace.tutorial.ods.mapper.ProductMapper"/>
+  <bean id="productDao" class="org.grace.tutorial.ods.dao.ProductDAO"/>
+
+  <bean id="productService" class="org.grace.tutorial.ods.service.ProductService">
+    <property name="productDao" ref="productDao"/>
+    <property name="rabbitMQService" ref="rabbitMQService"/>
+    <property name="transformService" ref="transformService"/>
+    <property name="consumeResourceService" ref="consumeResourceService"/>
+    <property name="productMapper" ref="productMapper"/>
+  </bean>
+
+</beans>
