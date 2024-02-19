@@ -40,6 +40,7 @@
         <module>Test</module>
       <module>date</module>
       <module>webflux</module>
+        <module>docker-practice</module>
     </modules>
 
     <build>
